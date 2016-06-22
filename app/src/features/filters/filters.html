@@ -1,0 +1,65 @@
+<div class="jumbotron">
+    <h2>Filters</h2>
+</div>
+<div class="row marketing">
+    <div class="col-md-12">
+        <form>
+            <div class="row">
+                <div class='col-md-6 form-group'>
+                    <h4>First Name : </h4>
+                    <input type="text" ng-model="vm.firstName" placeholder="Enter first name" class="form-control">
+                </div>
+                <div class='col-md-6 form-group'>
+                    <h4>First Name : </h4>
+                    <label type="text" ng-bind="vm.firstName | uppercase" placeholder="Enter first name" class="form-control"></label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class='col-md-6 form-group'>
+                    <h4>Last Name : </h4>
+                    <input type="text" ng-model="vm.lastName" placeholder="Enter first name" class="form-control">
+                </div>
+                <div class='col-md-6 form-group'>
+                    <h4>Last Name : </h4>
+                    <label type="text" ng-bind="vm.lastName |lowercase" placeholder="Enter first name" class="form-control"></label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class='col-md-6 form-group'>
+                    <h4>Amount : </h4>
+                    <input type="number" ng-model="vm.amount" placeholder="Enter first name" class="form-control">
+                </div>
+                <div class='col-md-6 form-group'>
+                    <h4>Amount : </h4>
+                    <label type="text" ng-bind="vm.amount | currency" class="form-control"></label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class='col-md-6 form-group'>
+                    <h4>Filter : </h4>
+                    <input type="text" ng-model="vm.searchString" placeholder="Enter first name" class="form-control">
+                </div>
+                <div class='col-md-6 form-group'>
+                    <ul>
+                        <li ng-repeat="item in vm.names | filter: vm.searchString">{{item.name}} </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class='col-md-6 form-group'>
+                    <h4>Custom Filter : </h4>
+                    <input type="text" ng-model="vm.nameToBeModified" placeholder="Enter first name" class="form-control">
+                </div>
+                <div class='col-md-6 form-group'>
+                    <h4>Custom Filter : </h4>
+                    <label type="text" ng-bind="vm.nameToBeModified | salutation" class="form-control"></label>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>

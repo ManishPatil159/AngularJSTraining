@@ -1,0 +1,19 @@
+<div class="jumbotron">
+    <h2>Services</h2>
+</div>
+<div class="row marketing">
+    <div class="col-md-12">
+        <form>
+            <button type="button" ng-click="vm.getLog()" class="btn btn-sm btn-primary">$log</button>
+            <button type="button" ng-click="vm.getTimeout()" class="btn btn-sm btn-primary">$timeout</button>
+            <button type="button" ng-click="vm.getPosts()" class="btn btn-sm btn-primary">$http</button>
+            <button ng-if="vm.posts.length" type="button" ng-click="vm.clearPosts()" class="btn btn-sm btn-primary">Clear Posts</button>
+            <div class="posts" ng-if="vm.posts.length">
+                <div ng-repeat="item in vm.posts">
+                    <h4>{{item.title}}</h4>
+                    <p>{{item.body}}</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
